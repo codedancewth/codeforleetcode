@@ -165,27 +165,60 @@ func groupAnagrams(strs []string) [][]string {
 // 链接：https://leetcode.cn/problems/group-anagrams/solutions/84565/golangmapbi-jiao-qiang-da-na-shu-zu-dang-key-by-se/
 // 来源：力扣（LeetCode）
 // 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+//func groupAnagrams2(strs []string) [][]string {
+//	dict := make(map[[26]int]*[]string)
+//	for _, s := range strs {
+//		k := getKey(s)
+//		if v, ok := dict[k]; ok {
+//			*v = append(*v, s)
+//		} else {
+//			dict[k] = &[]string{s}
+//		}
+//	}
+//	var res [][]string
+//	for _, v := range dict {
+//		res = append(res, *v)
+//	}
+//	return res
+//}
+//
+//func getKey(s string) [26]int {
+//	var k [26]int
+//	for i := range s {
+//		k[int(s[i]-'a')]++
+//	}
+//	return k
+//}
+
+// 复写这种牛逼的方式，回忆对应的思路
+// 这里的实现方式使用的是字符出现的次数来做对应的存储的
 func groupAnagrams2(strs []string) [][]string {
-	dict := make(map[[26]int]*[]string)
-	for _, s := range strs {
-		k := getKey(s)
-		if v, ok := dict[k]; ok {
-			*v = append(*v, s)
+	repeatMap := make(map[[26]int64]int64)
+	resultMap := make(map[[26]int64][]string, 0)
+	resultList := make([][]string, 0)
+
+	for _, index := range strs {
+		do := getKey(index)
+		if repeatMap[do] == 1 {
+			resultMap[do] = append(resultMap[do], index)
 		} else {
-			dict[k] = &[]string{s}
+			resultMap[do] = make([]string, 0)
+			resultMap[do] = append(resultMap[do], index)
+			repeatMap[do] = 1
 		}
 	}
-	var res [][]string
-	for _, v := range dict {
-		res = append(res, *v)
+
+	for _, index := range resultMap {
+		resultList = append(resultList, index)
 	}
-	return res
+
+	return resultList
 }
 
-func getKey(s string) [26]int {
-	var k [26]int
-	for i := range s {
-		k[int(s[i]-'a')]++
+func getKey(str string) [26]int64 {
+	var k [26]int64
+	for _, index := range str {
+		k[index-'a']++
 	}
 	return k
 }
