@@ -85,9 +85,9 @@ package main
 //	return resultList
 //}
 
-// 真正的解决方式 ，通过单个字符的数值二进制
+// 通过单个字符的数值二进制
 // https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked
-// tm最后一道题g了我日
+// tm最后几道case，g了我日，超时了，再换种思路
 func groupAnagrams(strs []string) [][]string {
 	resultMap := make(map[int]int)
 	resultList := make([][]string, 0)
@@ -222,3 +222,9 @@ func getKey(str string) [26]int64 {
 	}
 	return k
 }
+
+// 总结
+// 真是牛逼这群人，好好学习思想吧
+// 然后这个字符捡了可以得到ascii码的具体的值，直接做出现的字符次数判断，这样真的很灵活
+// map原来可以存储对应的数组作为key，但是前提是key的数组必须是指定的长度，这个也是一个学习点
+// 一开始也想到的此类的做法，但是还得继续学习对应的数据结构的灵活处理方式
