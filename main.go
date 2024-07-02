@@ -3,17 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 func main() {
-	for _, index := range groupAnagrams2([]string{}) {
-		marshal, _ := json.Marshal(index)
-		if strings.Contains(string(marshal), "rankle") {
-			fmt.Println(string(marshal))
-		}
-
-	}
-
-	fmt.Println(getKey("sdad"))
+	a := []int{45192, 0, -659, -52359, -99225, -75991, 0, -15155, 27382, 59818, 0, -30645, -17025, 81209, 887, 64648}
+	moveZeroes(a)
+	marshal, _ := json.Marshal(a)
+	fmt.Println(string(marshal))
 }
