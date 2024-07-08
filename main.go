@@ -6,37 +6,7 @@ import (
 )
 
 func main() {
-	a := &ListNode{
-		Val: 2,
-		Next: &ListNode{
-			Val:  4,
-			Next: nil,
-		},
-	}
-
-	b := &ListNode{
-		Val: 3,
-		Next: &ListNode{
-			Val:  2,
-			Next: a,
-		},
-	}
-
-	c := &ListNode{
-		Val: 1,
-		Next: &ListNode{
-			Val: 9,
-			Next: &ListNode{
-				Val:  1,
-				Next: a,
-			},
-		},
-	}
-
-	// 1 9 1 -> [a]1,4
-	//           |
-	//      3 2 ->
-	fmt.Println(getJson(getIntersectionNode(c, b)))
+	fmt.Println(trap([]int{0, 1, 5, 4, 2, 3, 5, 4}))
 }
 
 func getJson(a interface{}) string {
