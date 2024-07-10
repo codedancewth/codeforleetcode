@@ -119,3 +119,24 @@ func (l *ListNode) InsertNode(value int64) {
 		}
 	}
 }
+
+func TestBtree() {
+	n := &ListNode{
+		MinValue: 0,
+		MaxValue: 5,
+		Head:     nil,
+		Next:     nil,
+		CurrentNode: &Node{
+			Value: 2,
+			Next:  nil,
+		},
+	}
+
+	n.InsertNode(4)
+	n.InsertNode(3)
+	n.InsertNode(2)
+	n.InsertNode(7)
+	n.InsertNode(8)
+	n.InsertNode(10)
+	n.InsertNode(154)
+}

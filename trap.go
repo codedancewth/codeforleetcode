@@ -47,7 +47,7 @@ import "fmt"
 // 在得到数组 leftMax 和 rightMax 的每个元素值之后，对于 0≤i<n，下标 i 处能接的雨水量等于 min(leftMax[i],rightMax[i])−height[i]。遍历每个下标位置即可得到能接的雨水总量。
 //
 // 动态规划做法可以由下图体现。
-func trap(height []int) (ans int) {
+func trapV2(height []int) (ans int) {
 	n := len(height)
 	if n == 0 {
 		return
@@ -84,4 +84,36 @@ func max(a, b int) int {
 		return a
 	}
 	return b
+}
+
+// 自己的理解，接雨水的核心就是算好每个点的左右高度的max 的min值，然后减去当前点的高度即可点每个点的雨水
+func trap(height []int) (ans int) {
+	if len(height) == 0 {
+		return
+	}
+
+	if len(height) == 1 {
+		return height[0]
+	}
+
+	leftMaxArray := make([]int, len(height))
+	rightMaxArray := make([]int, len(height))
+
+	leftMaxArray[0] = height[0]
+	rightMaxArray[len(height)-1] = height[len(height)-1]
+
+	// 把每个点的左右高度最大都记住
+	for index := 1; index < len(height); index++ {
+		leftMaxArray[index] = max(leftMaxArray[index-1], height[index]) // 预存左边的最高高度
+	}
+
+	for index := len(height) - 2; index >= 0; index-- {
+		rightMaxArray[index] = max(rightMaxArray[index+1], height[index]) // 预存右边的最高高度
+	}
+
+	for index := range height { // 高度相减 在减去当前的点，即可得到答案
+		ans += min(leftMaxArray[index], rightMaxArray[index]) - height[index]
+	}
+
+	return
 }
