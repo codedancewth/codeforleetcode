@@ -92,10 +92,6 @@ func trap(height []int) (ans int) {
 		return
 	}
 
-	if len(height) == 1 {
-		return height[0]
-	}
-
 	leftMaxArray := make([]int, len(height))
 	rightMaxArray := make([]int, len(height))
 

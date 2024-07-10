@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmtJson(trap([]int{2, 1, 2}))
+	fmtJson(trap([]int{1}))
 }
 
 func fmtJson(a interface{}) {
