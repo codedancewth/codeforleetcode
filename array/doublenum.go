@@ -1,4 +1,4 @@
-package main
+package array
 
 // 两数之和（easy）
 // https://leetcode.cn/problems/two-sum/submissions/543103221/?envType=study-plan-v2&envId=top-100-liked
