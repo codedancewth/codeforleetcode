@@ -1,18 +1,5 @@
 package main
 
-/**
-* Definition for singly-linked list.
-* type ListNode struct {
-*     Val int
-*     Next *ListNode
-* }
- */
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 // https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked
 // 相交链表 ,官方题解，看上去很简单，但是要用哈希去重
 // get！！
