@@ -1,13 +1,12 @@
 package main
 
 import (
-	"awesomeProject/dynamic"
 	"encoding/json"
 	"fmt"
 )
 
 func main() {
-	fmtJson(dynamic.Trap([]int{1}))
+	fmtJson(searchInsert([]int{1}, 7))
 }
 
 func fmtJson(a interface{}) {
