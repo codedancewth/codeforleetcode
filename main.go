@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmtJson(searchInsert([]int{1}, 7))
+	fmtJson(isValid("()[]"))
 }
 
 func fmtJson(a interface{}) {
