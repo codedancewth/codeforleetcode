@@ -2,7 +2,7 @@ package main
 
 // https://leetcode.cn/problems/intersection-of-two-linked-lists/description/?envType=study-plan-v2&envId=top-100-liked
 // 相交链表 ,官方题解，看上去很简单，但是要用哈希去重
-// get！！
+// get！！！
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	a := make(map[*ListNode]bool)
 
