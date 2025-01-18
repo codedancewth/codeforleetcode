@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmtJson(isValid("()[]"))
+	fmtJson(isValidV2("([)]"))
 }
 
 func fmtJson(a interface{}) {

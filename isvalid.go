@@ -11,7 +11,7 @@ package main
 左括号必须以正确的顺序闭合。
 每个右括号都有一个对应的相同类型的左括号。
 */
-func isValid(s string) bool {
+/*func isValid(s string) bool {
 	b := []byte(s)
 	endMap := map[byte]byte{
 		41:  40,
@@ -38,4 +38,33 @@ func isValid(s string) bool {
 	}
 
 	return len(sb) == 0
+}*/
+
+// isValid 仿照栈的写法
+func isValidV2(s string) bool {
+	truemap := map[byte]byte{
+		')': '(',
+		']': '[',
+		'}': '{',
+	}
+	// 存入的字母是否存在
+	arrayStack := []byte{}
+	for i := range s {
+
+		if len(arrayStack) >= 1 {
+			if arrayStack[len(arrayStack)-1] == truemap[s[i]] {
+				if len(arrayStack) >= 2 {
+					arrayStack = arrayStack[:len(arrayStack)-1]
+				} else {
+					arrayStack = []byte{}
+				}
+			} else {
+				arrayStack = append(arrayStack, s[i])
+			}
+
+		} else {
+			arrayStack = append(arrayStack, s[i])
+		}
+	}
+	return len(arrayStack) == 0
 }
