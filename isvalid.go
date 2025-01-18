@@ -41,25 +41,23 @@ package main
 }*/
 
 // isValid 仿照栈的写法
+// 先对map进行初始化，主要是找到对应的数据的相反字符
+//
 func isValidV2(s string) bool {
 	truemap := map[byte]byte{
 		')': '(',
 		']': '[',
 		'}': '{',
 	}
-	// 存入的字母是否存在
+	// 构建栈
 	arrayStack := []byte{}
 	for i := range s {
-
+		// 如果栈存在数据
 		if len(arrayStack) >= 1 {
 			if arrayStack[len(arrayStack)-1] == truemap[s[i]] {
-				if len(arrayStack) >= 2 {
-					arrayStack = arrayStack[:len(arrayStack)-1]
-				} else {
-					arrayStack = []byte{}
-				}
+				arrayStack = arrayStack[:len(arrayStack)-1] //// 判断是否最新的数据 与map的字符val相等,就消除去
 			} else {
-				arrayStack = append(arrayStack, s[i])
+				arrayStack = append(arrayStack, s[i]) // 否则就直接在压栈
 			}
 
 		} else {
