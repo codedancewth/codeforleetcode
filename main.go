@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmtJson(isValidV2("([)]"))
+	fmt.Println(longestPalindrome("cc"))
 }
 
 func fmtJson(a interface{}) {
