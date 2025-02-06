@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(longestPalindrome("cc"))
+	fmt.Println(multiply("2", "3"))
 }
 
 func fmtJson(a interface{}) {
