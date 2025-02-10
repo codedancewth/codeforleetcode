@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(multiply("2", "3"))
+	fmt.Println(InsertionSort([]int{3, 1, 2}))
 }
 
 func fmtJson(a interface{}) {
