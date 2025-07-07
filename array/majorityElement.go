@@ -1,4 +1,4 @@
-package main
+package array
 
 // https://leetcode.cn/problems/majority-element/?envType=study-plan-v2&envId=top-100-liked
 // 多数元素

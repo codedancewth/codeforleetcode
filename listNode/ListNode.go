@@ -1,7 +1,7 @@
-package main
+package listNode
 
 /**
-* Definition for singly-linked list.
+* Definition for singly-linked listNode.
 * type ListNode struct {
 *     Val int
 *     Next *ListNode

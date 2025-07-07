@@ -1,4 +1,4 @@
-package main
+package array
 
 // InsertionSort 插入排序
 // 对象的插入数组的值进行排序

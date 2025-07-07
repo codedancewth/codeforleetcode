@@ -1,4 +1,4 @@
-package main
+package array
 
 // permute 全排列
 //https://leetcode.cn/problems/permutations/solutions/247052/chou-xiang-cheng-jue-ce-shu-yi-ge-pai-lie-jiu-xian/

@@ -1,4 +1,4 @@
-package main
+package array
 
 // climbStairs 爬楼梯
 // https://leetcode.cn/problems/climbing-stairs/submissions/597276624/

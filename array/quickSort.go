@@ -1,4 +1,4 @@
-package main
+package array
 
 // 快速排序
 // 快速排序的思想， 找到两个指针左右的去比较并且交互

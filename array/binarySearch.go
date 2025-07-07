@@ -1,4 +1,4 @@
-package main
+package array
 
 // 二分查找
 // binarySearch

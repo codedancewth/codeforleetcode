@@ -1,4 +1,4 @@
-package main
+package array
 
 // https://leetcode.cn/problems/single-number/submissions/543842376/?envType=study-plan-v2&envId=top-100-liked
 // 只出现一次的数字

@@ -6,8 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println()
-	Retest()
+	fmt.Println("s")
 }
 
 func fmtJson(a interface{}) {

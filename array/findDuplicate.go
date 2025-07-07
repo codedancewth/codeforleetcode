@@ -1,4 +1,4 @@
-package main
+package array
 
 // leetcode 287 寻找重复数
 // 使用map的情况进行去重 （好像性能不太行）
