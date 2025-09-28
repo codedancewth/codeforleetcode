@@ -32,3 +32,26 @@ func quickSort(arr []int) []int {
 
 	return arr
 }
+
+func QuickSortV2(arr []int, low, right int) {
+	if low < right {
+		index := partition(arr, low, right)
+		QuickSortV2(arr, low, index-1)
+		QuickSortV2(arr, index+1, right)
+	}
+}
+
+func partition(arr []int, low, right int) int {
+	index := arr[low]
+	i := low + 1
+
+	for j := i; j <= right; j++ {
+		if arr[j] < index {
+			arr[i], arr[j] = arr[j], arr[i]
+			i++
+		}
+	}
+
+	arr[low], arr[i-1] = arr[i-1], arr[low]
+	return i - 1
+}

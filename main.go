@@ -1,12 +1,15 @@
 package main
 
 import (
+	"codeforleetcode/array"
 	"encoding/json"
 	"fmt"
 )
 
 func main() {
-	fmt.Println("s")
+	a := []int{10, 7, 8, 9, 1, 5}
+	array.QuickSortV2(a, 0, 5)
+	fmtJson(a)
 }
 
 func fmtJson(a interface{}) {
